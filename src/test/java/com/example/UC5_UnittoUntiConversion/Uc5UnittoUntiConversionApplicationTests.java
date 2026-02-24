@@ -1,10 +1,10 @@
-package com.example.UC3_GenericQuantityClassForDRYPrinciple;
+package com.example.UC5_UnittoUntiConversion;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class Uc3GenericQuantityClassForDryPrincipleApplicationTests {
+class Uc5UnittoUntiConversionApplicationTests {
 
 	@Test
 	void contextLoads() {
