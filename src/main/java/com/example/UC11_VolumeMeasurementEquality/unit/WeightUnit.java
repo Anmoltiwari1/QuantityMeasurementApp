@@ -1,4 +1,4 @@
-package com.example.UC10_GenericQuantityClass.unit;
+package com.example.UC11_VolumeMeasurementEquality.unit;
 
 public enum WeightUnit implements IMeasurable{
 	

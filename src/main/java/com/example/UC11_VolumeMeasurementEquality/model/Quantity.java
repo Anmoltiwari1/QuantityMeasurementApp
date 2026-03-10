@@ -1,6 +1,6 @@
-package com.example.UC10_GenericQuantityClass.model;
+package com.example.UC11_VolumeMeasurementEquality.model;
 
-import com.example.UC10_GenericQuantityClass.unit.IMeasurable;
+import com.example.UC11_VolumeMeasurementEquality.unit.IMeasurable;
 
 public class Quantity<U extends IMeasurable> {
 
