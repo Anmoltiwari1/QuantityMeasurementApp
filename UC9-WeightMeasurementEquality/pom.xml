@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>UC7-AdditionwithTargetUnitSpecification</artifactId>
+	<artifactId>UC9-WeightMeasurementEquality</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>UC7-AdditionwithTargetUnitSpecification</name>
+	<name>UC9-WeightMeasurementEquality</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>

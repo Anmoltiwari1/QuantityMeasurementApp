@@ -33,7 +33,7 @@ public class QuantityLength {
 			throw new IllegalArgumentException("Target unit cannot be null");
 		
 		double base=unit.toFeet(value);
-		double result=targetUnit.toFeet(base);
+		double result=targetUnit.fromFeet(base);
 		
 		return new QuantityLength(result, targetUnit);
 	}
