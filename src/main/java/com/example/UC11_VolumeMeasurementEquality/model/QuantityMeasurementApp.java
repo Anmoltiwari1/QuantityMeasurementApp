@@ -1,7 +1,6 @@
 package com.example.UC11_VolumeMeasurementEquality.model;
 
 import com.example.UC11_VolumeMeasurementEquality.unit.LengthUnit;
-import com.example.UC11_VolumeMeasurementEquality.unit.VolumeUnit;
 import com.example.UC11_VolumeMeasurementEquality.unit.WeightUnit;
 
 public class QuantityMeasurementApp {
@@ -35,11 +34,6 @@ public class QuantityMeasurementApp {
                 w1.add(w2, WeightUnit.KILOGRAM));
         
         
-        //Volume Euality
-        Quantity<VolumeUnit> v1=new Quantity<>(1.0, VolumeUnit.LITRE);
-        Quantity<VolumeUnit> v2=new Quantity<>(1000.0, VolumeUnit.MILLILITRE);
-        
-        System.out.println("1L === 1000ml :"+v1.equals(v2));
         
     }
 }
