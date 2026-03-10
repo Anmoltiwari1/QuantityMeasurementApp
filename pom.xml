@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>UC9-WeightMeasurementEquality</artifactId>
+	<artifactId>UC10-GenericQuantityClass</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>UC9-WeightMeasurementEquality</name>
+	<name>UC10-GenericQuantityClass</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>

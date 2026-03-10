@@ -4,8 +4,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.junit.jupiter.api.Test;
 
-import com.example.UC7_AdditionwithTargetUnitSpecification.Length.LengthUnit;
-import com.example.UC7_AdditionwithTargetUnitSpecification.Length.QuantityLength;
+import com.example.UC10_GenericQuantityClass.Length.LengthUnit;
+import com.example.UC10_GenericQuantityClass.Length.QuantityLength;
 
 class QuantityLengthTest {
 
