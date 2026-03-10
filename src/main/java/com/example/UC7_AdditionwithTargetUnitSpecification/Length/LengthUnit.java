@@ -1,4 +1,4 @@
-package com.example.UC7_AdditionwithTargetUnitSpecification;
+package com.example.UC7_AdditionwithTargetUnitSpecification.Length;
 
 public enum LengthUnit {
 	FEET(1.0),

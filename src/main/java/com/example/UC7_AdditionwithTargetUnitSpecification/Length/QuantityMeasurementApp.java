@@ -1,4 +1,4 @@
-package com.example.UC7_AdditionwithTargetUnitSpecification;
+package com.example.UC7_AdditionwithTargetUnitSpecification.Length;
 
 public class QuantityMeasurementApp {
 public static void main(String[] args) {
