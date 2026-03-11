@@ -1,5 +1,7 @@
 package com.example.UC11_VolumeMeasurementEquality.model;
 
+import java.lang.classfile.constantpool.DoubleEntry;
+
 import com.example.UC11_VolumeMeasurementEquality.unit.IMeasurable;
 
 public class Quantity<U extends IMeasurable> {
@@ -20,6 +22,57 @@ public class Quantity<U extends IMeasurable> {
         this.value = value;
         this.unit = unit;
     }
+    
+    private enum ArithmeticOperation{
+    	
+    	ADD{
+    		public double compute(double a,double b) {
+    			return a+b;
+    		}
+    	},
+    	SUBTRACT{
+    		public double compute(double a,double b) {
+    			return a-b;
+    		}
+    	},
+    	
+    	DIVIDE{
+    		public double compute(double a,double b) {
+    			if(b==0)
+    				throw new ArithmeticException("Division By zero");
+    			return a/b;
+    		}
+    	};
+    	
+    	public abstract double compute(double a,double b);
+    }
+    
+    private void validateArithmeticOperands(Quantity<U> other, U targetUnit, boolean targetUnitRequired) {
+
+        if (other == null)
+            throw new IllegalArgumentException("Quantity cannot be null");
+
+        if (!unit.getClass().equals(other.unit.getClass()))
+            throw new IllegalArgumentException("Cross category operation not allowed");
+
+        if (Double.isNaN(other.value) || Double.isInfinite(other.value))
+            throw new IllegalArgumentException("Invalid value");
+
+        if (targetUnitRequired && targetUnit == null)
+            throw new IllegalArgumentException("Target unit cannot be null");
+    }
+    
+    private double performBaseArithmetic(Quantity<U> other, ArithmeticOperation operation) {
+
+        double base1 = unit.convertToBaseUnit(value);
+        double base2 = other.unit.convertToBaseUnit(other.value);
+
+        return operation.compute(base1, base2);
+    }
+    
+    public double roundTwoDecimal(double value) {
+    	return Math.round(value*100.0)/100;
+    }
 
     public Quantity<U> convertTo(U targetUnit) {
 
@@ -31,15 +84,16 @@ public class Quantity<U extends IMeasurable> {
 
     public Quantity<U> add(Quantity<U> other, U targetUnit) {
 
-        double base1 = unit.convertToBaseUnit(value);
-        double base2 = other.unit.convertToBaseUnit(other.value);
-
-        double sumBase = base1 + base2;
-
-        double result = targetUnit.convertFromBaseUnit(sumBase);
-
-        return new Quantity<>(result, targetUnit);
+        validateArithmeticOperands(other, targetUnit, true);
+    	
+    	double baseResult=performBaseArithmetic(other,ArithmeticOperation.ADD);
+    	
+    	double result=targetUnit.convertFromBaseUnit(baseResult);
+    	
+    	return new Quantity<>(roundTwoDecimal(result),targetUnit);
     }
+    
+    
 
     @Override
     public boolean equals(Object obj) {
@@ -58,34 +112,21 @@ public class Quantity<U extends IMeasurable> {
     
     public Quantity<U> subtract(Quantity<U> other,U targetUnit){
     	
-    	if(other==null || targetUnit==null)
-    		throw new IllegalArgumentException("Value cannot be null");
-    	
-    	double base1=unit.convertToBaseUnit(value);
-    	double base2=other.unit.convertToBaseUnit(other.value);
-    	
-    	double res=base1-base2;
-    	
-    	double result=targetUnit.convertFromBaseUnit(res);
-    	
-    	result=Math.round(result*100.0)/100.0;
-    	
-    	return new Quantity<>(result,targetUnit);
+    	validateArithmeticOperands(other, targetUnit, true);
+
+        double baseResult = performBaseArithmetic(other, ArithmeticOperation.SUBTRACT);
+
+        double result = targetUnit.convertFromBaseUnit(baseResult);
+
+        return new Quantity<>(roundTwoDecimal(result), targetUnit);
     	
     }
     
     public double division(Quantity<U> other) {
     	
-    	if(other==null)
-    		throw new IllegalArgumentException("Value cannot be null");
-    	
-    	double base1=unit.convertToBaseUnit(value);
-    	double base2=other.unit.convertToBaseUnit(other.value);
-    	
-    	if(base2==0)
-    		throw new ArithmeticException("Division by zero");
-    	
-    	return base1/base2;
+    	validateArithmeticOperands(other, null, false);
+
+        return performBaseArithmetic(other, ArithmeticOperation.DIVIDE);
     }
 
     @Override
