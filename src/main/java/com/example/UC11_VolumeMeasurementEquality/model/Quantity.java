@@ -3,6 +3,7 @@ package com.example.UC11_VolumeMeasurementEquality.model;
 import java.lang.classfile.constantpool.DoubleEntry;
 
 import com.example.UC11_VolumeMeasurementEquality.unit.IMeasurable;
+import com.example.UC11_VolumeMeasurementEquality.unit.TemeratureUnit;
 
 public class Quantity<U extends IMeasurable> {
 
@@ -60,6 +61,8 @@ public class Quantity<U extends IMeasurable> {
 
         if (targetUnitRequired && targetUnit == null)
             throw new IllegalArgumentException("Target unit cannot be null");
+        
+       unit.validateOperationSupport("Arithmetic Operation");
     }
     
     private double performBaseArithmetic(Quantity<U> other, ArithmeticOperation operation) {
@@ -75,6 +78,12 @@ public class Quantity<U extends IMeasurable> {
     }
 
     public Quantity<U> convertTo(U targetUnit) {
+    	
+    	if (unit.getClass().equals(TemeratureUnit.class)) {
+
+            double converted = ((TemeratureUnit) unit).convertTo(value, (TemeratureUnit) targetUnit);
+            return new Quantity<>(converted, targetUnit);
+        }
 
         double baseValue = unit.convertToBaseUnit(value);
         double converted = targetUnit.convertFromBaseUnit(baseValue);

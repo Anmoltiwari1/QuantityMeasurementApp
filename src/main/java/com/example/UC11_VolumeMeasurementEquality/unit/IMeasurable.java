@@ -1,5 +1,10 @@
 package com.example.UC11_VolumeMeasurementEquality.unit;
 
+@FunctionalInterface
+interface SupportsArithmetic {
+    boolean isSupported();
+}
+
 public interface IMeasurable {
 	double getConversionFactor();
 
@@ -12,4 +17,17 @@ public interface IMeasurable {
     }
 
     String getUnitName();
+    
+    
+ // Default arithmetic support (true for length, weight, volume)
+    SupportsArithmetic supportsArithmetic = () -> true;
+
+    default boolean supportsArithmetic() {
+        return supportsArithmetic.isSupported();
+    }
+
+    // Default validation (does nothing)
+    default void validateOperationSupport(String operation) {
+        // subclasses like TemperatureUnit will override
+    }
 }
