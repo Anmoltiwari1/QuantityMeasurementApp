@@ -55,6 +55,38 @@ public class Quantity<U extends IMeasurable> {
 
         return Double.compare(base1, base2) == 0;
     }
+    
+    public Quantity<U> subtract(Quantity<U> other,U targetUnit){
+    	
+    	if(other==null || targetUnit==null)
+    		throw new IllegalArgumentException("Value cannot be null");
+    	
+    	double base1=unit.convertToBaseUnit(value);
+    	double base2=other.unit.convertToBaseUnit(other.value);
+    	
+    	double res=base1-base2;
+    	
+    	double result=targetUnit.convertFromBaseUnit(res);
+    	
+    	result=Math.round(result*100.0)/100.0;
+    	
+    	return new Quantity<>(result,targetUnit);
+    	
+    }
+    
+    public double division(Quantity<U> other) {
+    	
+    	if(other==null)
+    		throw new IllegalArgumentException("Value cannot be null");
+    	
+    	double base1=unit.convertToBaseUnit(value);
+    	double base2=other.unit.convertToBaseUnit(other.value);
+    	
+    	if(base2==0)
+    		throw new ArithmeticException("Division by zero");
+    	
+    	return base1/base2;
+    }
 
     @Override
     public int hashCode() {

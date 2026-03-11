@@ -1,12 +1,13 @@
 package com.example.UC11_VolumeMeasurementEquality.unit;
 
-public enum VolumeUnit implements IMeasurable {
+
+
+public enum VolumeUnit implements IMeasurable{
 
 	LITRE(1.0),
-	MILLILITRE(0.001),
-	GALLON(3.78541);
+	MILLILITRE(1.0/1000.0);
 	
-	 private final double conversionFactor;
+	  private final double conversionFactor;
 
 	    VolumeUnit(double conversionFactor) {
 	        this.conversionFactor = conversionFactor;
@@ -21,4 +22,5 @@ public enum VolumeUnit implements IMeasurable {
 	    public String getUnitName() {
 	        return name();
 	    }
+	
 }

@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>UC10-GenericQuantityClass</artifactId>
+	<artifactId>UC12-SubstractionAndDivision</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>UC10-GenericQuantityClass</name>
+	<name>UC12-SubstractionAndDivision</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
