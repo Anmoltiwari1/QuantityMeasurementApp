@@ -1,15 +1,14 @@
-package com.example.UC11_VolumeMeasurementEquality.unit;
+package com.example.UC15_NTierArchitecture.unit;
 
-public enum LengthUnit implements IMeasurable {
-
-	 	FEET(1.0),
-	    INCHES(1.0 / 12.0),
-	    YARDS(3.0),
-	    CENTIMETERS(0.0328084);
+public enum WeightUnit implements IMeasurable{
+	
+	 	KILOGRAM(1.0),
+	    GRAM(0.001),
+	    TONNE(1000.0);
 
 	    private final double conversionFactor;
 
-	    LengthUnit(double conversionFactor) {
+	    WeightUnit(double conversionFactor) {
 	        this.conversionFactor = conversionFactor;
 	    }
 

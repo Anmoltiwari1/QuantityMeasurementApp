@@ -1,9 +1,6 @@
-package com.example.UC11_VolumeMeasurementEquality.model;
-
-import java.lang.classfile.constantpool.DoubleEntry;
-
-import com.example.UC11_VolumeMeasurementEquality.unit.IMeasurable;
-import com.example.UC11_VolumeMeasurementEquality.unit.TemeratureUnit;
+package com.example.UC15_NTier.entity;
+import com.example.UC15_NTierArchitecture.unit.IMeasurable;
+import com.example.UC15_NTierArchitecture.unit.TemeratureUnit;
 
 public class Quantity<U extends IMeasurable> {
 
@@ -149,4 +146,5 @@ public class Quantity<U extends IMeasurable> {
     public String toString() {
         return "Quantity(" + value + ", " + unit.getUnitName() + ")";
     }
+
 }

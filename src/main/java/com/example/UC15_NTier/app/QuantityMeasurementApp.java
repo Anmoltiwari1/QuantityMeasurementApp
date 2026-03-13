@@ -1,8 +1,9 @@
-package com.example.UC11_VolumeMeasurementEquality.model;
+package com.example.UC15_NTier.app;
 
-import com.example.UC11_VolumeMeasurementEquality.unit.LengthUnit;
-import com.example.UC11_VolumeMeasurementEquality.unit.VolumeUnit;
-import com.example.UC11_VolumeMeasurementEquality.unit.WeightUnit;
+import com.example.UC15_NTier.entity.Quantity;
+import com.example.UC15_NTierArchitecture.unit.LengthUnit;
+import com.example.UC15_NTierArchitecture.unit.VolumeUnit;
+import com.example.UC15_NTierArchitecture.unit.WeightUnit;
 
 public class QuantityMeasurementApp {
 	 public static void main(String[] args) {
