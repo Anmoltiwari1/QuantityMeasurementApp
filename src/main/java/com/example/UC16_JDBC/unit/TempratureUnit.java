@@ -1,6 +1,6 @@
-package com.example.UC15_NTierArchitecture.unit;
+package com.example.UC16_JDBC.unit;
 
-public enum TemeratureUnit implements IMeasurable{
+public enum TempratureUnit implements IMeasurable{
 
 	CELSIUS {
         public double convertToBaseUnit(double value) {
@@ -54,7 +54,7 @@ public enum TemeratureUnit implements IMeasurable{
         );
     }
 
-    public double convertTo(double value, TemeratureUnit target) {
+    public double convertTo(double value, TempratureUnit target) {
         double base = convertToBaseUnit(value);
         return target.convertFromBaseUnit(base);
     }

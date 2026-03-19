@@ -1,6 +1,7 @@
-package com.example.UC15_NTier.entity;
-import com.example.UC15_NTierArchitecture.unit.IMeasurable;
-import com.example.UC15_NTierArchitecture.unit.TemeratureUnit;
+package com.example.UC16_JDBC.entity;
+
+import com.example.UC16_JDBC.unit.IMeasurable;
+import com.example.UC16_JDBC.unit.TempratureUnit;
 
 public class Quantity<U extends IMeasurable> {
 
@@ -76,9 +77,9 @@ public class Quantity<U extends IMeasurable> {
 
     public Quantity<U> convertTo(U targetUnit) {
     	
-    	if (unit.getClass().equals(TemeratureUnit.class)) {
+    	if (unit.getClass().equals(TempratureUnit.class)) {
 
-            double converted = ((TemeratureUnit) unit).convertTo(value, (TemeratureUnit) targetUnit);
+            double converted = ((TempratureUnit) unit).convertTo(value, (TempratureUnit) targetUnit);
             return new Quantity<>(converted, targetUnit);
         }
 

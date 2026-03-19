@@ -1,10 +1,10 @@
-package com.example.UC7_AdditionwithTargetUnitSpecification;
+package com.example.UC16_JDBC;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class Uc7AdditionwithTargetUnitSpecificationApplicationTests {
+class Uc16JdbcApplicationTests {
 
 	@Test
 	void contextLoads() {

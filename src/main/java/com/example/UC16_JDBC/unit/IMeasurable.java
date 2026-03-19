@@ -1,4 +1,4 @@
-package com.example.UC15_NTierArchitecture.unit;
+package com.example.UC16_JDBC.unit;
 
 @FunctionalInterface
 interface SupportsArithmetic {

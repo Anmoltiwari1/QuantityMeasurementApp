@@ -1,14 +1,13 @@
-package com.example.UC15_NTierArchitecture.unit;
+package com.example.UC16_JDBC.unit;
 
-public enum WeightUnit implements IMeasurable{
+public enum VolumeUnit implements IMeasurable{
+
+	LITRE(1.0),
+	MILLILITRE(1.0/1000.0);
 	
-	 	KILOGRAM(1.0),
-	    GRAM(0.001),
-	    TONNE(1000.0);
+	  private final double conversionFactor;
 
-	    private final double conversionFactor;
-
-	    WeightUnit(double conversionFactor) {
+	    VolumeUnit(double conversionFactor) {
 	        this.conversionFactor = conversionFactor;
 	    }
 
@@ -21,4 +20,5 @@ public enum WeightUnit implements IMeasurable{
 	    public String getUnitName() {
 	        return name();
 	    }
+	
 }
