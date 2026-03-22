@@ -1,10 +1,10 @@
-package com.example.UC2_FeetAndInchesMeasurementEquality;
+package com.example.UC1.FeetMeasurementEqualtiy;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class Uc2FeetAndInchesMeasurementEqualityApplicationTests {
+class ApplicationTests {
 
 	@Test
 	void contextLoads() {
