@@ -1,4 +1,4 @@
-package com.example.UC6.AdditionOfTwoLength;
+package com.example.UC1.FeetMeasurementEqualtiy;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
