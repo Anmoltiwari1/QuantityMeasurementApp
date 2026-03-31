@@ -1,4 +1,4 @@
-package com.example.UC17.JPAIntegration.entity;
+package com.example.UC18.Authentication.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

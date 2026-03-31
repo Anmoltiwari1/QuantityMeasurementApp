@@ -1,4 +1,4 @@
-package com.example.UC17.JPAIntegration.DTO;
+package com.example.UC18.Authentication.DTO;
 
 public class CompareRequest {
 

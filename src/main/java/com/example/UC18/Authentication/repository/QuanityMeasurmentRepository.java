@@ -1,10 +1,12 @@
-package com.example.UC17.JPAIntegration.repository;
+package com.example.UC18.Authentication.repository;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.example.UC17.JPAIntegration.entity.QuantityMeasurementEntity;
+import com.example.UC18.Authentication.entity.QuantityMeasurementEntity;
+import com.example.UC18.Authentication.entity.User;
 
 public interface QuanityMeasurmentRepository extends JpaRepository<QuantityMeasurementEntity,Long>{
 
@@ -13,4 +15,5 @@ public interface QuanityMeasurmentRepository extends JpaRepository<QuantityMeasu
 	List<QuantityMeasurementEntity> findByBooleanResultTrue();
 	
 	long countByOperation(String operation);
+	
 }

@@ -1,22 +1,22 @@
-package com.example.UC17.JPAIntegration.Service;
+package com.example.UC18.Authentication.Service;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.UC17.JPAIntegration.DTO.AddRequest;
-import com.example.UC17.JPAIntegration.DTO.CompareRequest;
-import com.example.UC17.JPAIntegration.DTO.ConvertRequest;
-import com.example.UC17.JPAIntegration.DTO.DivideRequest;
-import com.example.UC17.JPAIntegration.DTO.QuantityDTO;
-import com.example.UC17.JPAIntegration.DTO.SubtractRequest;
-import com.example.UC17.JPAIntegration.entity.QuantityMeasurementEntity;
-import com.example.UC17.JPAIntegration.repository.QuanityMeasurmentRepository;
-import com.example.UC17.JPAIntegration.util.IMeasurable;
-import com.example.UC17.JPAIntegration.util.LengthUnit;
-import com.example.UC17.JPAIntegration.util.TemperatureUnit;
-import com.example.UC17.JPAIntegration.util.VolumeUnit;
-import com.example.UC17.JPAIntegration.util.WeightUnit;
+import com.example.UC18.Authentication.DTO.AddRequest;
+import com.example.UC18.Authentication.DTO.CompareRequest;
+import com.example.UC18.Authentication.DTO.ConvertRequest;
+import com.example.UC18.Authentication.DTO.DivideRequest;
+import com.example.UC18.Authentication.DTO.QuantityDTO;
+import com.example.UC18.Authentication.DTO.SubtractRequest;
+import com.example.UC18.Authentication.entity.QuantityMeasurementEntity;
+import com.example.UC18.Authentication.repository.QuanityMeasurmentRepository;
+import com.example.UC18.Authentication.util.IMeasurable;
+import com.example.UC18.Authentication.util.LengthUnit;
+import com.example.UC18.Authentication.util.TemperatureUnit;
+import com.example.UC18.Authentication.util.VolumeUnit;
+import com.example.UC18.Authentication.util.WeightUnit;
 
 @Service
 public class QuantityMeasurementServiceImpl implements IQuantityMeasurementService{

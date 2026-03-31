@@ -1,13 +1,13 @@
-package com.example.UC17.JPAIntegration.DTO;
+package com.example.UC18.Authentication.DTO;
 
-public class SubtractRequest {
+public class AddRequest {
 
 	private QuantityDTO q1;
 	private QuantityDTO q2;
     private String unit;
     
     
-	public SubtractRequest(QuantityDTO q1, QuantityDTO q2, String unit) {
+	public AddRequest(QuantityDTO q1, QuantityDTO q2, String unit) {
 		super();
 		this.q1 = q1;
 		this.q2 = q2;
@@ -43,4 +43,6 @@ public class SubtractRequest {
 	public void setUnit(String unit) {
 		this.unit = unit;
 	}
+    
+    
 }

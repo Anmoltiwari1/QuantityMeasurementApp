@@ -1,4 +1,4 @@
-package com.example.UC17.JPAIntegration;
+package com.example.UC18.Authentication;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
