@@ -1,6 +1,8 @@
 package com.example.UC18.Authentication.Service;
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -54,19 +56,32 @@ public class QuantityMeasurementServiceImpl implements IQuantityMeasurementServi
 	        }
 	    }
 	    
-	    private QuantityMeasurementEntity creatEntity(QuantityDTO q1,QuantityDTO q2,String operation,double numericResult,boolean booleanResult) {
-	    	
-	    	QuantityMeasurementEntity entity = new QuantityMeasurementEntity();
-	    	entity.setValue1(q1.getValue());
+	    private QuantityMeasurementEntity creatEntity(
+	            QuantityDTO q1,
+	            QuantityDTO q2,
+	            String operation,
+	            double numericResult,
+	            boolean booleanResult) {
+
+	        QuantityMeasurementEntity entity = new QuantityMeasurementEntity();
+
+	        entity.setValue1(q1.getValue());
 	        entity.setUnit1(q1.getUnit());
-	        entity.setValue2(0);
-	        entity.setUnit2("-");
-	        entity.setOperation("CONVERT");
+
+	        if (q2 != null) {
+	            entity.setValue2(q2.getValue());
+	            entity.setUnit2(q2.getUnit());
+	        } else {
+	            entity.setValue2(0);
+	            entity.setUnit2("-");
+	        }
+
+	        entity.setOperation(operation); // ✅ FIXED
+
 	        entity.setNumericResult(numericResult);
 	        entity.setBooleanResult(booleanResult);
-	        
+
 	        return entity;
-	    	
 	    }
 	    
 	    
@@ -212,6 +227,11 @@ public class QuantityMeasurementServiceImpl implements IQuantityMeasurementServi
 	    	    repository.save(creatEntity(q1, q2,"DIVIDE", result, false));
 
 	    	    return result;
+	    }
+	    
+	    @Override
+	    public List<QuantityMeasurementEntity> getHistory() {
+	        return repository.findAll();
 	    }
 
 }

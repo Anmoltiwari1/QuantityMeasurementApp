@@ -2,8 +2,11 @@ package com.example.UC18.Authentication.Controller;
 
 import java.io.Console;
 import java.net.ResponseCache;
+import java.util.List;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,9 +19,11 @@ import com.example.UC18.Authentication.DTO.DivideRequest;
 import com.example.UC18.Authentication.DTO.QuantityDTO;
 import com.example.UC18.Authentication.DTO.SubtractRequest;
 import com.example.UC18.Authentication.Service.IQuantityMeasurementService;
+import com.example.UC18.Authentication.entity.QuantityMeasurementEntity;
 
 @RestController
 @RequestMapping("/api")
+@CrossOrigin(origins = "http://localhost:3000") 
 public class QuantityMeasurementController {
 
 	 private final IQuantityMeasurementService service;
@@ -61,5 +66,10 @@ public class QuantityMeasurementController {
 	    
 	            boolean result = service.compare(request);
 	            return ResponseEntity.ok(result);
+	    }
+	    
+	    @GetMapping("/history")
+	    public ResponseEntity<List<QuantityMeasurementEntity>> getHistory() {
+	        return ResponseEntity.ok(service.getHistory());
 	    }
 }
